@@ -80,11 +80,15 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: animacao-botao-volta 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: animacao-botao 0.2s forwards;
+}
+
+#switch button:hover{
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -160,4 +164,24 @@ footer {
   align-items: center;
   padding: 24px 0;
   font-size: 14px;
+}
+
+/* Criando animação do botão que troca o plano de fundo*/
+@keyframes animacao-botao {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes animacao-botao-volta {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+  
 }
